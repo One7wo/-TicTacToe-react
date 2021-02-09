@@ -1,13 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font: 14px "Century Gothic", Futura, sans-serif;
+    margin: 20px;
+    background: rgb(214, 214, 214);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ol,
+ul {
+    padding-left: 30px;
+}
+
+.board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.status {
+    margin-bottom: 10px;
+}
+
+.square {
+    background: rgb(36, 36, 36);
+    border: 1px solid #999;
+    float: left;
+    font-size: 100px;
+    font-weight: bold;
+    line-height: 34px;
+
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    color: rgb(204, 204, 204);
+}
+.board-row:nth-child(1) .square:nth-child(1),
+.board-row:nth-child(1) .square:nth-child(3) {
+    background: rgb(53, 53, 53);
+}
+.board-row:nth-child(2n) .square:nth-child(2) {
+    background: rgb(53, 53, 53);
+}
+.board-row:nth-child(3n) .square:nth-child(1),
+.board-row:nth-child(3n) .square:nth-child(3) {
+    background: rgb(53, 53, 53);
+}
+
+.square:focus {
+    outline: none;
+}
+
+.kbd-navigation .square:focus {
+    background: #ddd;
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+}
+
+.game-info {
+    margin-left: 100px;
+}
+.game-info div {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.game-info ol {
+    font-size: 28px;
+    font-weight: bold;
+}
+.game-info ol li {
+    background: rgb(209, 255, 166);
+}
+.game-info ol li:nth-child(2n) {
+    background: rgb(88, 154, 230);
 }
